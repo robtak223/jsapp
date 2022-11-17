@@ -11,7 +11,7 @@ const fetchVideos = async () => {
 }
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: fetchVideos()});
+  res.render('index', { title: "Hello"});
 });
 
 module.exports = router;
