@@ -1,6 +1,16 @@
-extends layout
-
-block content
-  h1= title
-  h2= title
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel="stylesheet" href="https://use.typekit.net/hgu6sri.css")
+    link(rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200")
+    script(src="./routes/index.js")
+  body
+    block content
+    section.video
+      iframe.video
+        src="https://www.youtube-nocookie.com/embed/kZ9qbpA-Jas?controls=0"
+        title="YouTube video player" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
 
