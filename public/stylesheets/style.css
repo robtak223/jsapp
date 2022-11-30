@@ -1,16 +1,10 @@
 main {
   background: white;
-  height: 100vh;
-  max-width: 800px;
-  margin: 0 0;
-  padding: 1rem;
 }
 
 body {
   background: red;
-  height: 100vh;
-  max-width: 400px;
-  margin: 0 auto;
+  width: 400px;
 }
 
 a {
