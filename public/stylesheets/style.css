@@ -1,6 +1,14 @@
-body {
+main {
   background: white;
   height: 100vh;
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+body {
+  background: red;
+  height: 100px;
   max-width: 400px;
   margin: 0 auto;
   padding: 1rem;
