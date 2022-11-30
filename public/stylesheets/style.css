@@ -8,6 +8,14 @@ iframe {
   margin: 0 auto;
 }
 
+tits {
+  color: black;
+  text-align: center;
+  font-size: 48;
+  font-weight: bold;
+  font-family: fantasy, Helvetica, sans-serif;
+}
+
 a {
   background-color: #4CAF50;
 }
