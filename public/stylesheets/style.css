@@ -11,7 +11,8 @@ iframe {
 tits {
   color: black;
   text-align: center;
-  font-size: 48;
+  font-size: 200;
+  margin: 40px auto;
   font-weight: bold;
   font-family: fantasy, Helvetica, sans-serif;
 }
