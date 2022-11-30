@@ -21,7 +21,7 @@ a {
 .button {
   border: none;
   color: white;
-  padding: 15px 32px;
+  padding: 100px 100px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -29,4 +29,10 @@ a {
   margin: 4px 2px;
   cursor: pointer;
 }
+
+.button:hover {
+  background-color:black;
+  transition: 0.7s;
+}
+
 
