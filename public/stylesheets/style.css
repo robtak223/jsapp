@@ -69,12 +69,14 @@ li a:hover:not(.active) {
 .leftcol {
   float: left;
   width: 25%;
+  display: inline;
 }
 
 .rightcol {
   float: left;
   width: 75%;
   padding-left: 20px;
+  display: inline;
 }
 
 .row:after {
