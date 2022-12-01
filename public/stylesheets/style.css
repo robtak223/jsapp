@@ -18,3 +18,10 @@ main {
 .backim {
   background-repeat: repeat-x;
 }
+
+.titled{
+  font-family: Copperplate;
+  color: red;
+  font-weight: 900;
+  text-transform: uppercase;
+}
