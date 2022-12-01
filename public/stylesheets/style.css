@@ -9,10 +9,10 @@ iframe {
 }
 
 h1 {
-  color: red;
+  color: black;
   text-align: center;
   margin: 60px auto;
-  font-family: Copperplate;
+  font-family: fantasy, Helvetica, sans-serif;
   display: block;
 }
 
