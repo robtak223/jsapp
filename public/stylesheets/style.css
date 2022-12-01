@@ -17,6 +17,7 @@ main {
 
 .button:hover {
   background-color: red;
+  transition: 0.3s;
 }
 
 
