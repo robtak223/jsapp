@@ -11,7 +11,7 @@ const fetchVideos = async () => {
 }
 
 router.get('/about', function(req, res, next) {
-  res.render('about', { title: "About"});
+  res.render('about/about', { title: "About"});
 });
 router.get('/', function(req, res, next) {
   res.render('index', { title: "Main"});
