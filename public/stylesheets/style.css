@@ -15,7 +15,8 @@ main {
 }
 
 
-.backim {
+body {
+  background-image: url(images/back.jpg);
   background-repeat: repeat-x;
 }
 
