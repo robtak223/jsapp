@@ -22,7 +22,9 @@ body {
 
 .titled{
   font-family: Copperplate;
-  color: red;
+  color: black;
+  text-align: center;
   font-weight: 900;
+  font-size: 10em;
   text-transform: uppercase;
 }
