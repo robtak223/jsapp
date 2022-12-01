@@ -26,8 +26,9 @@ main {
 
 
 body {
-  /*background: linear-gradient(45deg, #85FFBD, #FFFB7D);*/
-  background: linear-gradient(to bottom, #f9f9f9 0%, #f9f9f9 65%, white 65%, white 100%);
+  background: linear-gradient(45deg, #85FFBD, #FFFB7D);
+  background-size: 0% 100%;
+  background-repeat: no-repeat;
 }
 
 .titled{
