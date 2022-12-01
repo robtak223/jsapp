@@ -10,6 +10,10 @@ const fetchVideos = async () => {
   return result.data
 }
 
+router.get('/contact', function(req, res, next) {
+  res.render('contact/contact', { title: "Contact"});
+});
+
 router.get('/about', function(req, res, next) {
   res.render('about/about', { title: "About"});
 });
