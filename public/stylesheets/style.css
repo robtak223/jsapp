@@ -1,5 +1,5 @@
-root {
-  --ttime: 0.3s;
+:root {
+  --ttime: 1s;
 }
 
 main {
