@@ -9,9 +9,12 @@ const fetchVideos = async () => {
   const result = await axios(options)
   return result.data
 }
-/* GET home page. */
+
+router.get('/about', function(req, res, next) {
+  res.render('index', { title: "About"});
+});
 router.get('/', function(req, res, next) {
-  res.render('index', { title: "Hello"});
+  res.render('index', { title: "Main"});
 });
 
 module.exports = router;
