@@ -27,11 +27,10 @@ main {
 
 body {
   background-color: #85FFBD;
-  background: linear-gradient(90deg, #85FFBD, #FFFB7D);
+  background-image: linear-gradient(0deg, #85FFBD, #FFFB7D);
   background-size: 100% 100%;
   background-repeat: no-repeat;
 }
-
 .titled{
   font-family: Copperplate;
   color: black;
