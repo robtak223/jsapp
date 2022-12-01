@@ -1,3 +1,7 @@
+root {
+  --ttime: 0.3s;
+}
+
 main {
   background: #DDDD00;
 }
@@ -17,7 +21,7 @@ main {
 
 .button:hover {
   background-color: red;
-  transition: 0.3s;
+  transition: var(--ttime);
 }
 
 
