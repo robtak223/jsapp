@@ -66,6 +66,9 @@ li a:hover:not(.active) {
   color: white;
 }
 
+.center {
+  text-align: center;
+}
 
 .leftcol {
   float: left;
