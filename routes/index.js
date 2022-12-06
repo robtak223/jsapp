@@ -1,15 +1,13 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const path = require('path');
 
-router.get('/contact', function(req, res, next) {
-  res.render('contact/contact', { title: "Contact"});
+const app = express();
+const port = process.env.PORT || 3000;
+
+// sendFile will go here
+app.get('/', function(req, res) {
+  res.sendFile(path.join(__dirname, '../views/index.html'));
 });
 
-router.get('/about', function(req, res, next) {
-  res.render('about/about', { title: "About"});
-});
-router.get('/', function(req, res, next) {
-  res.render('index', { title: "Main"});
-});
-
-module.exports = router;
+app.listen(port);
+console.log('Server started at http://localhost:' + port);
