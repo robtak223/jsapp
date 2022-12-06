@@ -32,7 +32,8 @@
     background-repeat: no-repeat;
     scroll-behavior: smooth;
   }
-  .titled{
+  
+  titled {
     font-family: Copperplate;
     color: black;
     text-align: center;
