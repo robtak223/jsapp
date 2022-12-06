@@ -6,7 +6,7 @@ const port = process.env.PORT || 3000;
 
 // sendFile will go here
 app.get('/', function(req, res) {
-  res.sendFile(path.join(__dirname, './views/index.html'));
+  res.sendFile(path.join(__dirname, '../views/index.html'));
 });
 
 app.listen(port);
