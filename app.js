@@ -6,7 +6,7 @@ const port = process.env.PORT || 3000;
 
 
 
-var indexRouter = require('./routes/index');
+var indexRouter = require('/routes/index');
 app.use('/', indexRouter);
 // sendFile will go here
 app.get('/', function(req, res) {
