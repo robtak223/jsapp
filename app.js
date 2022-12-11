@@ -10,7 +10,7 @@ var indexRouter = require('./routes/index');
 app.use('/', indexRouter);
 // sendFile will go here
 app.get('/', function(req, res) {
-  res.sendFile(path.join(__dirname, './views/index.html'));
+  res.sendFile(path.join(__dirname, '/views/index.html'));
 });
 
 app.listen(port);
