@@ -4,50 +4,69 @@
   }
   
   body {
-    font-family: Arial;
-    padding: 10px;
-    background: #f1f1f1;
+    font-family: proxima-nova, sans-serif;
+    background-color: #000;
   }
   
   /* Header/Blog Title */
   .header {
-    padding: 30px;
+    display: block;
     text-align: center;
-    background: #93e9be;
   }
 
   .center {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
+    align-content: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+    margin-top: 50px;
+    color: #ffffff;
   }
   
   .header h1 {
-    color: #000;
+    font-family: proxima-nova, sans-serif;
+    color: #93a5cf;
     font-size: 50px;
   }
   
   /* Style the top navigation bar */
   .topnav {
     overflow: hidden;
-    background-color: #000;
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
   }
   
   /* Style the topnav links */
   .topnav a {
-    float: left;
-    display: block;
-    color: #FFF;
-    text-align: center;
-    padding: 14px 16px;
+    margin-left: 10px;
+    margin-right: 10px;
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+    border-radius: 22px;
+    padding: 10px;
+    cursor: pointer;
+    transition-duration: 0.4s;
+    color: #ffffff;
     text-decoration: none;
   }
-  
+  .but-tex {
+    margin-left: 7px;
+    font-size: 1em;
+    font-family: proxima-nova, sans-serif;
+    font-weight: bold;
+  }
+    
   /* Change color on hover */
   .topnav a:hover {
+    background-color: #537895;
+    transition-duration: 0.3s;
+  }
+  .topnav a:active {
     background-color: #ddd;
-    color: black;
     transition-duration: 0.3s;
   }
   
@@ -55,14 +74,13 @@
   /* Left column */
   .leftcolumn {   
     float: left;
-    width: 75%;
+    width: 100%;
   }
   
   /* Right column */
   .rightcolumn {
     float: left;
     width: 25%;
-    background-color: #f1f1f1;
     padding-left: 20px;
   }
   
@@ -75,24 +93,41 @@
   
   /* Add a card effect for articles */
   .card {
-    background-color: #ddd;
-    padding: 20px;
-    margin-top: 20px;
+    /*
+    align-content: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+    */
+    background: radial-gradient(circle at 0% 0.5%, rgb(241, 241, 242) 0.1%, rgb(224, 226, 228) 100.2%);
+    background-repeat: repeat-x;
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-top: 40px;
+    align-content: left;
+    justify-content: left;
+    border-radius: 22px;
+    padding: 15px;
+    transition-duration: 0.4s;
+    color: #000000;
+    text-decoration: none;
   }
-  
   /* Clear floats after the columns */
   .row:after {
     content: "";
     display: table;
     clear: both;
   }
-  
-  /* Footer */
-  .footer {
-    padding: 20px;
-    text-align: center;
-    background: #ddd;
-    margin-top: 20px;
+
+  .contact-block {
+    display: flex;
+    flex-direction: row;
+    align-content: left;
+    justify-content: left;
+    margin-top: 15px;
+    font-size: 1em;
+    font-family: proxima-nova, sans-serif;
+    font-weight: bold;
   }
   
   /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
@@ -108,5 +143,36 @@
     .topnav a {
       float: none;
       width: 100%;
+    }
+  }
+
+
+  #console {
+    font-family: Courier, monospace;
+    color: #dddddd;
+    max-width: 750px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    font-size: 15px;
+  }
+  
+  #k {
+    animation: change 4s;
+  }
+  
+  #op {
+    color: #888888;
+  }
+  
+  @keyframes change {
+    0% {
+      color: rgb(255, 255, 255);
+    }
+    50% {
+      color: rgb(255, 255, 255);
+    }
+    99% {
+      color: rgb(0, 0, 0);
     }
   }
