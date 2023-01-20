@@ -62,7 +62,8 @@
     
   /* Change color on hover */
   .topnav a:hover {
-    background-color: #537895;
+    color: #222;
+    background-color: #fff;
     transition-duration: 0.3s;
   }
   .topnav a:active {
@@ -117,6 +118,59 @@
     content: "";
     display: table;
     clear: both;
+  }
+
+  .nav-bar {
+    margin-top: 50px;
+  }
+
+  .proj-text {
+    font-size: 20px;
+    color: #fff;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 20px;
+    margin-right: 40px;
+    font-family: proxima-nova, sans-serif;
+    font-weight: bold;
+  }
+
+  .vl {
+    margin-top: auto;
+    margin-bottom: auto;
+    border-left: 1px solid rgba(255,255,255,.25);
+    height: 80%;
+  }
+
+  .proj-desc {
+    font-size: 15px;
+    color: #ddd;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 40px;
+    font-family: proxima-nova, sans-serif;
+    font-weight: lighter;
+  }
+
+  .proj-block {
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: left;
+    border-top: 1px solid rgba(255,255,255,.25);
+    border-bottom: 1px solid rgba(255,255,255,.25);
+    font-size: 1em;
+    height: 100px;
+    margin-top: 20px;
+    color:rgb(255, 255, 255);
+    font-family: proxima-nova, sans-serif;
+    font-weight: bold;
+  }
+
+  .proj-block:hover {
+    background-color: #444;
+    transition-duration: 0.3s;
   }
 
   .contact-block {
