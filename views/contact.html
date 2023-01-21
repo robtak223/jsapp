@@ -52,17 +52,21 @@
         </span>
         <div class="but-tex">(203)-213-3904</div>
         </div>
-        <script src="/js/main.js"></script>
     </div>
     <div class="card">
       <h1 class="header">Contact Form</h1>
-      <form action="form_submission.php" method="post">
-        Full Name: <input type="text" name="first_name"><br>
-        Email: <input type="text" name="email"><br>
-        Message:<br><textarea rows="5" name="message" cols="30"></textarea><br>
-        <input type="submit" name="submit" value="Submit">
-      </form>
+      <div>
+        <div><input type="text" id="txtName" placeholder="Full Name" /></div>
+        <div><input type="text" id="txtEmail" placeholder="Email Address" /></div>
+        <div>
+            <textarea id="msg" name="msg" placeholder="Your Message" style="height:150px; width:300px;"></textarea>
+        </div>
     </div>
+    <div>
+      <button onclick="alert('Submitted'); window.location.href='/contact'; ">
+        Click Here
+      </button>
+  </div>
   </div>
 </div>
 </body>
