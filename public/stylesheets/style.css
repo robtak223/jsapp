@@ -135,6 +135,9 @@
     font-weight: bold;
   }
 
+  input {
+    box-shadow: inset -1px -1px 2px #CCC;
+  }
   .vl {
     margin-top: auto;
     margin-bottom: auto;
