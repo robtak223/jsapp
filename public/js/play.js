@@ -42,7 +42,7 @@ var thing;
 var turn;
 var spots = [];
 var spot_scale = 0.3;
-var rand = false;
+var rand = true;
 
 // Takes in 2D array board and sets positons of piece sprites based on object locations
 function setBoard(board) {

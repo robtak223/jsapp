@@ -24,10 +24,10 @@ app.get('/projects/chess', function(req, res) {
 });
 
 
-
 app.get('/views/website.html', function(req, res) {
   res.sendFile(path.join(__dirname, '/views/website.html'));
 });
+
 app.get('/', function(req, res) {
   res.sendFile(path.join(__dirname, '/views/index.html'));
 });
