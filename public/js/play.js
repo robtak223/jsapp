@@ -417,7 +417,7 @@ function create ()
         // Find which square was clicked on
         let x = Math.floor(pointer.x / 100);
         let y = Math.floor(pointer.y / 100);
-        let squared = position_map[x+1] + y.toString(); 
+        let squared = position_map[x+1] + (8-y).toString(); 
         let obj = chess.get(squared);
         let match = false;
         console.log(squared);
@@ -449,13 +449,13 @@ function create ()
                 let pwed = parseInt(select_pos[1]);
 
                 x = pzsd*100 + 50;
-                y = pwed*100 + 50;
+                y = (8-pwed)*100 + 50;
                 var pzsd2 = squared[0];
                 pzsd2 = rev_position_map[pzsd2];
                 let pwed2 = parseInt(squared[1]);
 
                 x2 = pzsd2*100 + 50;
-                y2 = pwed2*100 + 50;
+                y2 = (8-pwed2)*100 + 50;
                 for(let piece in pieces) {
                     if(piece.x == x && piece.y == y) {
                         piece.destroy();
@@ -504,7 +504,7 @@ function create ()
                 pzsd = rev_position_map[pzsd];
                 let pwed = parseInt(move[1]);
                 x = pzsd*100 + 50;
-                y = pwed*100 + 50;
+                y = (8-pwed)*100 + 50;
                 spots.push([thing.add.sprite(x, y, 'spot'), pzsd, pwed]);
                 spots[spots.length-1][0].setScale(spot_scale);
             }
