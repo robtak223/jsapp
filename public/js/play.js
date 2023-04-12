@@ -1,3 +1,4 @@
+/*
 import { Piece, King, Queen, Bishop, Knight, Rook, Pawn } from "./piece.js";
 
 var config = {
@@ -67,7 +68,7 @@ but1 = this.add.sprite(200, 400, 'but').setInteractive().setScale(0.4);
     text1 = this.add.text(110, 385, 'Random Agent', { fontFamily: 'Georgia, "Goudy Bookletter 1911", Times, serif', fontSize: '25px', color: 'black', fontStyle: 'bold'});
     text1 = this.add.text(530, 385, 'vs. Human', { fontFamily: 'Georgia, "Goudy Bookletter 1911", Times, serif', fontSize: '25px', color: 'black', fontStyle: 'bold'});
     
-*/
+
 
 function agentMove(board) {
 
@@ -262,6 +263,241 @@ function create ()
                 x = move[0]*100 + 50;
                 y = move[1]*100 + 50;
                 spots.push([thing.add.sprite(x, y, 'spot'), move[0], move[1]]);
+                spots[spots.length-1][0].setScale(spot_scale);
+            }
+        }
+    });
+    
+    setBoard(board);
+
+}
+
+
+function update ()
+{
+
+}
+*/
+
+import {Chess} from 'chess.js';
+
+var config = {
+    type: Phaser.AUTO,
+    width: 800,
+    height: 800,
+    autoCenter: true,
+    scene: {
+        preload: preload,
+        create: create,
+        update: update
+    }
+};
+
+var game = new Phaser.Game(config);
+
+function preload ()
+{
+    // Load images of the board and pieces
+    this.load.image('wq', '/images/triv_img/wQ.png');
+    this.load.image('bq', '/images/triv_img/bQ.png');
+    this.load.image('bk', '/images/triv_img/bK.png');
+    this.load.image('wk', '/images/triv_img/wK.png');
+    this.load.image('wn', '/images/triv_img/wN.png');
+    this.load.image('bn', '/images/triv_img/bN.png');
+    this.load.image('bb', '/images/triv_img/bB.png');
+    this.load.image('wb', '/images/triv_img/wB.png');
+    this.load.image('wr', '/images/triv_img/wR.png');
+    this.load.image('br', '/images/triv_img/bR.png');
+    this.load.image('bp', '/images/triv_img/bP.png');
+    this.load.image('wp', '/images/triv_img/wP.png');
+    this.load.image('spot', '/images/triv_img/spot2.png');
+    this.load.image('board', '/images/triv_img/board.png');
+    this.load.image('but', '/images/triv_img/but.png');
+    this.moved = [];
+}
+// TODO: move these to class variables
+var board;
+var selected;
+var select_pos;
+var thing;
+var turn;
+var pieces = [];
+var spots = [];
+var spot_scale = 0.3;
+var rand = true;
+var chess;
+var position_map = {
+    1 : "a",
+    2 : "b",
+    3 : "c",
+    4 : "d", 
+    5 : "e",
+    6 : "f",
+    7 : "g",
+    8 : "h"
+};
+var rev_position_map = {
+    "a" : 1,
+    "b" : 2,
+    "c" : 3,
+    "d" : 4, 
+    "e" : 5,
+    "f" : 6,
+    "g" : 7,
+    "h" : 8
+};
+
+
+// Takes in 2D array board and sets positons of piece sprites based on object locations
+function setBoard(board) {
+
+    for(let i = 0; i < 8; i++) {
+        for(let j = 0; j < 8; j++) {
+            if(board[i][j] != '') {
+                board[i][j].sprite.x = i*100 + 50;
+                board[i][j].sprite.y = j*100 + 50;
+            }
+        }
+    }
+}
+
+
+function create ()
+{
+    chess = new Chess()
+
+    turn = 'w';
+    selected = false
+    thing = this;
+    let boardIm = this.add.image(401, 400, 'board');
+    boardIm.setScale(0.75);
+    // For each piece, add the sprite and set its starting location in the 2D array
+    var wq = this.add.sprite(50, 50, 'wq').setInteractive().setScale(0.565);
+    pieces.push(wq);
+    var bq = this.add.sprite(50, 50, 'bq').setInteractive().setScale(0.565);
+    pieces.push(bq);
+    var wk = this.add.sprite(50, 50, 'wk').setInteractive().setScale(0.565);
+    pieces.push(wk);
+    var bk = this.add.sprite(50, 50, 'bk').setInteractive().setScale(0.565);
+    pieces.push(bk);
+    var wb1 = this.add.sprite(50, 50, 'wb').setInteractive().setScale(0.565);
+    pieces.push(wb1);
+    var bb1 = this.add.sprite(50, 50, 'bb').setInteractive().setScale(0.565);
+    pieces.push(bb1);
+    var wb2 = this.add.sprite(50, 50, 'wb').setInteractive().setScale(0.565);
+    pieces.push(wb2);
+    var bb2 = this.add.sprite(50, 50, 'bb').setInteractive().setScale(0.565);
+    pieces.push(bb2);
+    var wr1 = this.add.sprite(50, 50, 'wr').setInteractive().setScale(0.565);
+    pieces.push(wr1);
+    var br1 = this.add.sprite(50, 50, 'br').setInteractive().setScale(0.565);
+    pieces.push(br1);
+    var wr2 = this.add.sprite(50, 50, 'wr').setInteractive().setScale(0.565);
+    pieces.push(wr2);
+    var br2 = this.add.sprite(50, 50, 'br').setInteractive().setScale(0.565);
+    pieces.push(br2);
+    var wn1 = this.add.sprite(50, 50, 'wn').setInteractive().setScale(0.565);
+    pieces.push(wn1);
+    var bn1 = this.add.sprite(50, 50, 'bn').setInteractive().setScale(0.565);
+    pieces.push(bn1);
+    var wn2 = this.add.sprite(50, 50, 'wn').setInteractive().setScale(0.565);
+    pieces.push(wn2);
+    var bn2 = this.add.sprite(50, 50, 'bn').setInteractive().setScale(0.565);
+    pieces.push(bn2);
+
+    for(let i = 0; i < 8; i++) {
+        var wp1 = this.add.sprite(50, 50, 'wp').setInteractive().setScale(0.565);
+        pieces.push(wp1);
+        var bp1 = this.add.sprite(50, 50, 'bp').setInteractive().setScale(0.565);
+        pieces.push(bp1);
+    }
+
+    // Main mouse input function
+    this.input.on('pointerup', function(pointer) {
+        // Find which square was clicked on
+        let x = Math.floor(pointer.x / 100);
+        let y = Math.floor(pointer.y / 100);
+        let squared = position_map[x+1] + y.toString() 
+        obj = chess.get(squared)
+        let match = false;
+
+        // if a piece was already selected (and is thus moving)
+        if(selected) {
+            // find if we clicked to an actual move for the piece
+            for(let i in spots) {
+                let spot = spots[i]
+                if(x == spot[1] && y == spot[2]) {
+                    match = true;
+                    break;
+                }
+            }
+            // if we successfully clicked on a real move
+            if(match) {
+                let newde = select_pos + squared
+                chess.move(newde)
+
+                if(turn =='w') {
+                    turn = 'b';
+                } else {
+                    turn = 'w';
+                }
+                var pzsd = select_pos[0]
+                pzsd = rev_position_map[pzsd];
+                let pwed = parseInt(select_pos[1]);
+
+                x = pzsd*100 + 50;
+                y = pwed*100 + 50;
+                var pzsd2 = squared[0];
+                pzsd2 = rev_position_map[pzsd2];
+                let pwed2 = parseInt(squared[1]);
+
+                x2 = pzsd2*100 + 50;
+                y2 = pwed2*100 + 50;
+                for(let piece in pieces) {
+                    if(piece.x == x && piece.y == y) {
+                        piece.destroy()
+                    }
+                    if(piece.x == x2 && piece.y == y2) {
+                        piece.x = x;
+                        piece.y = y;
+                    }
+                }
+
+                if(rand) {
+                    let move = Math.floor(Math.random() * chess.moves().length);
+                    chess.move(chess.moves()[move])
+                }
+
+            }
+            // get rid of spots which indicated potential moves
+            for(let i in spots) {
+                spots[i][0].destroy();
+            }
+            spots.length = 0;
+            selected=false;
+        } else {
+            // if no piece is selected
+            if(spots) {
+                for(let i in spots) {
+                    spots[i][0].destroy();
+                }
+                spots.length = 0;
+            }
+            // if we clicked on an empty square or if we tried to move a piece off-turn
+            if(!obj || obj.color != turn) {
+                return;
+            }
+            selected = true;
+            select_pos = squared;
+            let moves = chess.moves({square: squared});
+            for(let i in moves) {
+                let move = moves[i];
+                var pzsd = move[0]
+                pzsd = rev_position_map[pzsd];
+                let pwed = parseInt(move[1]);
+                x = pzsd*100 + 50;
+                y = pwed*100 + 50;
+                spots.push([thing.add.sprite(x, y, 'spot'), pzsd, pwed]);
                 spots[spots.length-1][0].setScale(spot_scale);
             }
         }
