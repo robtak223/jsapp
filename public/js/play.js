@@ -279,7 +279,7 @@ function update ()
 }
 */
 
-import { Chess } from "./node_modules/chess.js/chess.js";
+import { Chess } from "./chess.js/chess.js";
 
 var config = {
     type: Phaser.AUTO,
