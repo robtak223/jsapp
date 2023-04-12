@@ -418,7 +418,7 @@ function create ()
         let x = Math.floor(pointer.x / 100);
         let y = Math.floor(pointer.y / 100);
         let squared = position_map[x+1] + y.toString() 
-        let obj = chess.get(squared)
+        let obj = chess.get(squared);
         let match = false;
         console.log(squared);
         console.log(obj);
