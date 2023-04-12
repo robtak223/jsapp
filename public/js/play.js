@@ -493,9 +493,9 @@ function create ()
             let moves = chess.moves({square: squared});
             for(let i in moves) {
                 let move = moves[i];
-                var pzsd = move[0];
+                var pzsd = move.slice(-2);
                 pzsd = rev_position_map[pzsd];
-                let pwed = parseInt(move[1]);
+                let pwed = parseInt(move.slice(-1));
                 x = (pzsd-1)*100 + 50;
                 y = (8-pwed)*100 + 50;
                 spots.push([thing.add.sprite(x, y, 'spot'), pzsd, pwed]);
