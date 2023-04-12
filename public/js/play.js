@@ -457,10 +457,10 @@ function create ()
                 let x2 = (pzsd2-1)*100 + 50;
                 let y2 = (8-pwed2)*100 + 50;
                 for(let piece in pieces) {
-                    if(piece.x == x && piece.y == y) {
+                    if(piece.sprite.x == x && piece.sprite.y == y) {
                         piece.destroy();
                     }
-                    if(piece.x == x2 && piece.y == y2) {
+                    if(piece.sprite.x == x2 && piece.sprite.y == y2) {
                         piece.x = x;
                         piece.y = y;
                     }
