@@ -279,7 +279,7 @@ function update ()
 }
 */
 
-import { Chess } from "https://unpkg.com/chess.js@0.12.0/chess.js";
+import Chess from "https://unpkg.com/chess.js@0.12.0/chess.js";
 
 var config = {
     type: Phaser.AUTO,
