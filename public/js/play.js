@@ -428,7 +428,7 @@ function create ()
             // find if we clicked to an actual move for the piece
             for(let i in spots) {
                 let spot = spots[i]
-                if(x == spot[1] && y == spot[2]) {
+                if(x == spot[1]-1 && y == 8-spot[2]) {
                     match = true;
                     break;
                 }
