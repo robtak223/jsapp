@@ -496,6 +496,7 @@ function create ()
                 var pzsd = move.slice(-2);
                 pzsd = rev_position_map[pzsd];
                 let pwed = parseInt(move.slice(-1));
+                console.log(pzsd, pwed)
                 x = (pzsd-1)*100 + 50;
                 y = (8-pwed)*100 + 50;
                 spots.push([thing.add.sprite(x, y, 'spot'), pzsd, pwed]);
