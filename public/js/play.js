@@ -448,13 +448,13 @@ function create ()
                 pzsd = rev_position_map[pzsd];
                 let pwed = parseInt(select_pos[1]);
 
-                x = pzsd*100 + 50;
+                x = (pzsd-1)*100 + 50;
                 y = (8-pwed)*100 + 50;
                 var pzsd2 = squared[0];
                 pzsd2 = rev_position_map[pzsd2];
                 let pwed2 = parseInt(squared[1]);
 
-                x2 = pzsd2*100 + 50;
+                x2 = (pzsd2-1)*100 + 50;
                 y2 = (8-pwed2)*100 + 50;
                 for(let piece in pieces) {
                     if(piece.x == x && piece.y == y) {
@@ -503,7 +503,7 @@ function create ()
                 var pzsd = move[0];
                 pzsd = rev_position_map[pzsd];
                 let pwed = parseInt(move[1]);
-                x = pzsd*100 + 50;
+                x = (pzsd-1)*100 + 50;
                 y = (8-pwed)*100 + 50;
                 spots.push([thing.add.sprite(x, y, 'spot'), pzsd, pwed]);
                 spots[spots.length-1][0].setScale(spot_scale);
