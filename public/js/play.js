@@ -457,7 +457,7 @@ function create ()
                 console.log(x, y);
                 console.log(x2, y2);
                 for(let piece in pieces) {
-                    console.log(piece.x, piece.y)
+                    console.log(piece);
                     if(piece.x == x2 && piece.y == y2) {
                         piece.destroy();
                     }
