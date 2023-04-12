@@ -420,8 +420,6 @@ function create ()
         let squared = position_map[x+1] + (8-y).toString(); 
         let obj = chess.get(squared);
         let match = false;
-        console.log(squared);
-        console.log(obj);
         // if a piece was already selected (and is thus moving)
         if(selected) {
             console.log("selecteed");
@@ -456,7 +454,10 @@ function create ()
 
                 let x2 = (pzsd2-1)*100 + 50;
                 let y2 = (8-pwed2)*100 + 50;
+                console.log(x, y);
+                console.log(x2, y2);
                 for(let piece in pieces) {
+                    console.log(piece.x, piece.y)
                     if(piece.x == x2 && piece.y == y2) {
                         piece.destroy();
                     }
@@ -464,11 +465,6 @@ function create ()
                         piece.x = x2;
                         piece.y = y2;
                     }
-                }
-
-                if(rand) {
-                    let move = Math.floor(Math.random() * chess.moves().length);
-                    chess.move(chess.moves()[move]);
                 }
 
             }
@@ -487,9 +483,6 @@ function create ()
                 }
                 spots.length = 0;
             }
-            console.log(obj.color);
-            console.log(turn);
-            console.log(chess.fen());
             // if we clicked on an empty square or if we tried to move a piece off-turn
             if(!obj || obj.color != turn) {
                 return;
@@ -497,7 +490,6 @@ function create ()
             selected = true;
             select_pos = squared;
             let moves = chess.moves({square: squared});
-            console.log(moves);
             for(let i in moves) {
                 let move = moves[i];
                 var pzsd = move[0];
