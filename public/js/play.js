@@ -417,7 +417,7 @@ function create ()
         // Find which square was clicked on
         let x = Math.floor(pointer.x / 100);
         let y = Math.floor(pointer.y / 100);
-        let squared = position_map[x+1] + y.toString() 
+        let squared = position_map[x+1] + y.toString(); 
         let obj = chess.get(squared);
         let match = false;
         console.log(squared);
@@ -444,7 +444,7 @@ function create ()
                 } else {
                     turn = 'w';
                 }
-                var pzsd = select_pos[0]
+                var pzsd = select_pos[0];
                 pzsd = rev_position_map[pzsd];
                 let pwed = parseInt(select_pos[1]);
 
@@ -458,7 +458,7 @@ function create ()
                 y2 = pwed2*100 + 50;
                 for(let piece in pieces) {
                     if(piece.x == x && piece.y == y) {
-                        piece.destroy()
+                        piece.destroy();
                     }
                     if(piece.x == x2 && piece.y == y2) {
                         piece.x = x;
@@ -468,7 +468,7 @@ function create ()
 
                 if(rand) {
                     let move = Math.floor(Math.random() * chess.moves().length);
-                    chess.move(chess.moves()[move])
+                    chess.move(chess.moves()[move]);
                 }
 
             }
@@ -500,7 +500,7 @@ function create ()
             console.log(moves);
             for(let i in moves) {
                 let move = moves[i];
-                var pzsd = move[0]
+                var pzsd = move[0];
                 pzsd = rev_position_map[pzsd];
                 let pwed = parseInt(move[1]);
                 x = pzsd*100 + 50;
