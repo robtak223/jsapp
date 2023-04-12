@@ -454,8 +454,8 @@ function create ()
                 pzsd2 = rev_position_map[pzsd2];
                 let pwed2 = parseInt(squared[1]);
 
-                x2 = (pzsd2-1)*100 + 50;
-                y2 = (8-pwed2)*100 + 50;
+                let x2 = (pzsd2-1)*100 + 50;
+                let y2 = (8-pwed2)*100 + 50;
                 for(let piece in pieces) {
                     if(piece.x == x && piece.y == y) {
                         piece.destroy();
