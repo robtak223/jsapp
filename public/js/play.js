@@ -421,6 +421,7 @@ function create ()
         let obj = chess.get(squared)
         let match = false;
         console.log(squared);
+        console.log(obj);
         // if a piece was already selected (and is thus moving)
         if(selected) {
             console.log("selecteed");
