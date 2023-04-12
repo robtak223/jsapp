@@ -420,9 +420,10 @@ function create ()
         let squared = position_map[x+1] + y.toString() 
         let obj = chess.get(squared)
         let match = false;
-
+        console.log(squared);
         // if a piece was already selected (and is thus moving)
         if(selected) {
+            console.log("selecteed");
             // find if we clicked to an actual move for the piece
             for(let i in spots) {
                 let spot = spots[i]
@@ -433,6 +434,7 @@ function create ()
             }
             // if we successfully clicked on a real move
             if(match) {
+                console.log("match");
                 let newde = select_pos + squared
                 chess.move(newde)
 
@@ -476,6 +478,7 @@ function create ()
             spots.length = 0;
             selected=false;
         } else {
+            console.log("no select");
             // if no piece is selected
             if(spots) {
                 for(let i in spots) {
@@ -490,6 +493,7 @@ function create ()
             selected = true;
             select_pos = squared;
             let moves = chess.moves({square: squared});
+            console.log(moves);
             for(let i in moves) {
                 let move = moves[i];
                 var pzsd = move[0]
