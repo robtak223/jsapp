@@ -456,7 +456,8 @@ function create ()
                 let y2 = (8-pwed2)*100 + 50;
                 console.log(x, y);
                 console.log(x2, y2);
-                for(let piece in pieces) {
+                for(let i in pieces) {
+                    let piece = pieces[i];
                     console.log(piece);
                     if(piece.x == x2 && piece.y == y2) {
                         piece.destroy();
