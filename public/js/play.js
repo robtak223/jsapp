@@ -488,6 +488,7 @@ function create ()
             }
             console.log(obj.color);
             console.log(turn);
+            console.log(chess.fen());
             // if we clicked on an empty square or if we tried to move a piece off-turn
             if(!obj || obj.color != turn) {
                 return;
