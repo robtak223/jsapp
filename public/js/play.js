@@ -372,43 +372,43 @@ function create ()
     let boardIm = this.add.image(401, 400, 'board');
     boardIm.setScale(0.75);
     // For each piece, add the sprite and set its starting location in the 2D array
-    var wq = this.add.sprite(50, 50, 'wq').setInteractive().setScale(0.565);
+    var wq = this.add.sprite(350, 750, 'wq').setInteractive().setScale(0.565);
     pieces.push(wq);
-    var bq = this.add.sprite(50, 50, 'bq').setInteractive().setScale(0.565);
+    var bq = this.add.sprite(350, 50, 'bq').setInteractive().setScale(0.565);
     pieces.push(bq);
-    var wk = this.add.sprite(50, 50, 'wk').setInteractive().setScale(0.565);
+    var wk = this.add.sprite(450, 750, 'wk').setInteractive().setScale(0.565);
     pieces.push(wk);
-    var bk = this.add.sprite(50, 50, 'bk').setInteractive().setScale(0.565);
+    var bk = this.add.sprite(450, 50, 'bk').setInteractive().setScale(0.565);
     pieces.push(bk);
-    var wb1 = this.add.sprite(50, 50, 'wb').setInteractive().setScale(0.565);
+    var wb1 = this.add.sprite(250, 750, 'wb').setInteractive().setScale(0.565);
     pieces.push(wb1);
-    var bb1 = this.add.sprite(50, 50, 'bb').setInteractive().setScale(0.565);
+    var bb1 = this.add.sprite(250, 50, 'bb').setInteractive().setScale(0.565);
     pieces.push(bb1);
-    var wb2 = this.add.sprite(50, 50, 'wb').setInteractive().setScale(0.565);
+    var wb2 = this.add.sprite(550, 750, 'wb').setInteractive().setScale(0.565);
     pieces.push(wb2);
-    var bb2 = this.add.sprite(50, 50, 'bb').setInteractive().setScale(0.565);
+    var bb2 = this.add.sprite(550, 50, 'bb').setInteractive().setScale(0.565);
     pieces.push(bb2);
-    var wr1 = this.add.sprite(50, 50, 'wr').setInteractive().setScale(0.565);
+    var wr1 = this.add.sprite(50, 750, 'wr').setInteractive().setScale(0.565);
     pieces.push(wr1);
     var br1 = this.add.sprite(50, 50, 'br').setInteractive().setScale(0.565);
     pieces.push(br1);
-    var wr2 = this.add.sprite(50, 50, 'wr').setInteractive().setScale(0.565);
+    var wr2 = this.add.sprite(750, 750, 'wr').setInteractive().setScale(0.565);
     pieces.push(wr2);
-    var br2 = this.add.sprite(50, 50, 'br').setInteractive().setScale(0.565);
+    var br2 = this.add.sprite(750, 50, 'br').setInteractive().setScale(0.565);
     pieces.push(br2);
-    var wn1 = this.add.sprite(50, 50, 'wn').setInteractive().setScale(0.565);
+    var wn1 = this.add.sprite(150, 750, 'wn').setInteractive().setScale(0.565);
     pieces.push(wn1);
-    var bn1 = this.add.sprite(50, 50, 'bn').setInteractive().setScale(0.565);
+    var bn1 = this.add.sprite(150, 50, 'bn').setInteractive().setScale(0.565);
     pieces.push(bn1);
-    var wn2 = this.add.sprite(50, 50, 'wn').setInteractive().setScale(0.565);
+    var wn2 = this.add.sprite(650, 750, 'wn').setInteractive().setScale(0.565);
     pieces.push(wn2);
-    var bn2 = this.add.sprite(50, 50, 'bn').setInteractive().setScale(0.565);
+    var bn2 = this.add.sprite(650, 50, 'bn').setInteractive().setScale(0.565);
     pieces.push(bn2);
 
     for(let i = 0; i < 8; i++) {
-        var wp1 = this.add.sprite(50, 50, 'wp').setInteractive().setScale(0.565);
+        var wp1 = this.add.sprite((i*100)+50, 650, 'wp').setInteractive().setScale(0.565);
         pieces.push(wp1);
-        var bp1 = this.add.sprite(50, 50, 'bp').setInteractive().setScale(0.565);
+        var bp1 = this.add.sprite((i*100)+50, 150, 'bp').setInteractive().setScale(0.565);
         pieces.push(bp1);
     }
 
@@ -503,7 +503,6 @@ function create ()
         }
     });
     
-    setBoard(board);
 
 }
 
