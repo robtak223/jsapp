@@ -486,6 +486,8 @@ function create ()
                 }
                 spots.length = 0;
             }
+            console.log(obj.color);
+            console.log(turn);
             // if we clicked on an empty square or if we tried to move a piece off-turn
             if(!obj || obj.color != turn) {
                 return;
